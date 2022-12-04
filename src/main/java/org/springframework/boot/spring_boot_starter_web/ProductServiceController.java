@@ -62,7 +62,7 @@ public class ProductServiceController {
     
     @RequestMapping(value = "/products", method = RequestMethod.POST)
     public ResponseEntity<Object> createProduct(@RequestBody Product product) {
-        productRepo.put(product.getId(), product);
+        
         if(productRepo.containsKey(product.getId())){
             return new ResponseEntity<>("Product is Already Used", HttpStatus.OK);
         }
@@ -77,7 +77,7 @@ public class ProductServiceController {
     @RequestMapping(value = "/products/{id}", method = RequestMethod.PUT)
     public ResponseEntity<Object> updateProduct(@PathVariable("id") String id, @RequestBody Product product) {
         
-        if(productRepo.containsKey(product.getId())){
+        if(!productRepo.containsKey(id)){
             return new ResponseEntity<>("Product is not Available", HttpStatus.OK);
         }else{
             productRepo.remove(id);
@@ -88,9 +88,15 @@ public class ProductServiceController {
     }
     
     @RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> delete(@PathVariable("id") String id) { 
-        productRepo.remove(id);
-        return new ResponseEntity<>("Product is deleted successsfully", HttpStatus.OK);
+    public ResponseEntity<Object> delete(@PathVariable("id") String id, @RequestBody Product product) { 
+        
+        if(!productRepo.containsKey(id)){
+            return new ResponseEntity<>("Product is not Available", HttpStatus.OK);
+        }else{
+            productRepo.remove(id);
+            return new ResponseEntity<>("Product is deleted successsfully", HttpStatus.OK);
+        }
+       
     }
     
 }
