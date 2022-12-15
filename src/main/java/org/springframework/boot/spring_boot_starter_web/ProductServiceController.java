@@ -31,26 +31,36 @@ public class ProductServiceController {
         Product honey = new Product();
         honey.setId("1");
         honey.setName("Honey");
+        honey.setJumlah("8");
+        honey.setHarga("Rp 20.000");
         productRepo.put(honey.getId(), honey);
         
         Product almond = new Product();
         almond.setId("2");
         almond.setName("Kacang Mente");
+        almond.setJumlah("5");
+        almond.setHarga("Rp 50.000");
         productRepo.put(almond.getId(), almond);
         
         Product mie = new Product();
         mie.setId("3");
         mie.setName("Mie");
+        mie.setJumlah("10");
+        mie.setHarga("Rp 30.000");
         productRepo.put(mie.getId(), mie);
         
         Product lidi = new Product();
         lidi.setId("4");
         lidi.setName("Lidi");
+        lidi.setJumlah("2");
+        lidi.setHarga("Rp 40.000");
         productRepo.put(lidi.getId(), lidi);
         
         Product benedict = new Product();
         benedict.setId("5");
         benedict.setName("Lidi");
+        benedict.setJumlah("9");
+        benedict.setHarga("Rp 80.000");
         productRepo.put(benedict.getId(), benedict);
     }
     

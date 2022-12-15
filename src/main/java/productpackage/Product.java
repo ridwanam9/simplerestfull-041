@@ -12,6 +12,24 @@ public class Product {
     
     private String id;
     private String name;
+    private String jumlah;
+    private String harga;
+
+    public String getJumlah() {
+        return jumlah;
+    }
+
+    public void setJumlah(String jumlah) {
+        this.jumlah = jumlah;
+    }
+
+    public String getHarga() {
+        return harga;
+    }
+
+    public void setHarga(String harga) {
+        this.harga = harga;
+    }
 
     public String getId() {
         return id;
