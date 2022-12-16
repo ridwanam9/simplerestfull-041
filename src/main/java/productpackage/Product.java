@@ -10,10 +10,10 @@ package productpackage;
  */
 public class Product {
     
-    private String id;
-    private String name;
-    private String jumlah;
-    private String harga;
+    private String id; //deklarasi variabel id
+    private String name; //deklarasi variabel name
+    private String jumlah; //deklarasi variabel jumlah
+    private String harga; //deklarasi variabel harga
 
     public String getJumlah() {
         return jumlah;
